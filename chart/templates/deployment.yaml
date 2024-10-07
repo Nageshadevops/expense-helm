@@ -18,11 +18,11 @@ spec:
         projectName: {{ .Chart.Name }}
     spec:
     {{ if .Values.initContainers.enabled }}
-    volumes:
+     volumes:
       - name: vault
         emptyDir:
           sizeLimit: 5Mi
-    initContainers:
+     initContainers:
       - name: vault
         image: 838007018287.dkr.ecr.us-east-1.amazonaws.com/vault-init-container:v1
         env:
