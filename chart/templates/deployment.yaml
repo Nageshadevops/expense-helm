@@ -17,7 +17,7 @@ spec:
         appName: {{ .Values.component }}
         projectName: {{ .Chart.Name }}
     spec:
-    {{ if .Values.initContainers.enabled }}
+      {{ if .Values.initContainers.enabled }}
       volumes:
         - name: vault
           emptyDir:
@@ -36,7 +36,7 @@ spec:
             - name: SECRET_NAME
               value: {{ .Chart.Name }}-dev/{{ .Values.component }}
             - name: VAULT_SKIP_VERIFY
-              value: "TRUE"
+            value: "TRUE"
           volumeMounts:
             - mountPath: /data
               name: vault
@@ -50,7 +50,7 @@ spec:
         - name: {{ .Values.component }}
           image: 838007018287.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:{{ .Values.appVersion }}
       {{ if .Values.initContainers.enabled }}
-          volumeMounts:
-            - mountPath: /data
-              name: vault
+      volumeMounts:
+        - mountPath: /data
+          name: vault
       {{ end }}
