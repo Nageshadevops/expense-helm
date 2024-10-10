@@ -51,7 +51,7 @@ spec:
           command: ["sleep","1000"]
           image: 838007018287.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:{{ .Values.appVersion }}
       {{ if .Values.initContainers.enabled }}
-      volumeMounts:
-        - mountPath: /data
-          name: vault
+          volumeMounts:
+            - mountPath: /data
+              name: vault
       {{ end }}
