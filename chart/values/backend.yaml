@@ -10,4 +10,4 @@ service:
 
 
 ingress:
-enabled: false
+ enabled: false
