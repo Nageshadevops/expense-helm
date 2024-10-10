@@ -22862,7 +22862,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: argocd-dev.rdevops6a.online
+    - host: argocd-dev.angadicnc.online
       http:
         paths:
           - pathType: Prefix
